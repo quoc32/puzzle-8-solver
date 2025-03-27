@@ -330,6 +330,54 @@ def create_frame(go_to, window, update_solver_path):
         height=209.0
     )
 
+    frame.button_image_7 = PhotoImage(
+        file=relative_to_assets("button_7.png"))
+    frame.button_7 = Button(
+        image=frame.button_image_7,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("aStar"),
+        relief="flat"
+    )
+    frame.button_7.place(
+        x=7.0,
+        y=186.0,
+        width=78.0,
+        height=33.0
+    )
+
+    frame.button_image_8 = PhotoImage(
+        file=relative_to_assets("button_8.png"))
+    frame.button_8 = Button(
+        image=frame.button_image_8,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("greedy"),
+        relief="flat"
+    )
+    frame.button_8.place(
+        x=8.0,
+        y=229.0,
+        width=78.0,
+        height=33.0
+    )
+
+    frame.button_image_9 = PhotoImage(
+        file=relative_to_assets("button_9.png"))
+    frame.button_9 = Button(
+        image=frame.button_image_9,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("idaStar"),
+        relief="flat"
+    )
+    frame.button_9.place(
+        x=8.0,
+        y=272.0,
+        width=78.0,
+        height=33.0
+    )
+
 
     
     def iddfs():

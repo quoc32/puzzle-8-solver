@@ -65,7 +65,7 @@ def BFS(root):
                 queue.append(neighbor)
                 cameFrom[neighbor_sig] = node_sig
 
-    return print("failure")
+    return "fail", "fail" 
 
 # Hàm giải + generation data
 def reconstruct_path_pygame(cameFrom, current_sig, visited_count=-1):
@@ -111,26 +111,32 @@ def BFS_pygame(root):
                 queue.append(neighbor)
                 cameFrom[neighbor_sig] = node_sig
 
-    return print("failure")
+    print("failure")
+    return "fail", "fail", "fail" 
 
 
 # ================
-path, info, dataMap = BFS_pygame(start)
-print("info: ", info)
-print("path: ", path)
-print("dataMap: ", dataMap)
 
-with open("./pygame_demo/data.txt", "w", encoding="utf-8") as file:
-    for key, value in info.items():
-        file.write(str(key) + " " + str(value) + "\n")
+def bfs_and_generation_data(root):
+    path, info, dataMap = BFS_pygame(root)
+    # print("info: ", info)
+    # print("path: ", path)
+    # print("dataMap: ", dataMap)
 
-    file.write("\n")
+    with open("./pygame_demo/data.txt", "w", encoding="utf-8") as file:
+        for key, value in info.items():
+            file.write(str(key) + " " + str(value) + "\n")
 
-    for node in path:
-        file.write(str(node) + "\n")
+        file.write("\n")
 
-    file.write("\n")
+        for node in path:
+            file.write(str(node) + "\n")
 
-    for key, value in dataMap.items():
-        file.write(str(key) + " " + str(value) + "\n")
+        file.write("\n")
+
+        for key, value in dataMap.items():
+            file.write(str(key) + " " + str(value) + "\n")
+
+    
+    return path, info, dataMap
     

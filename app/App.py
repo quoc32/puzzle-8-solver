@@ -6,35 +6,41 @@ import pygame
 from Frames.bfs.bfs import create_frame as create_bfs_frame
 from Frames.dfs.dfs import create_frame as create_dfs_frame
 from Frames.iddfs.iddfs import create_frame as create_ids_frame
+from Frames.aStar.aStar import create_frame as create_aStar_frame
+from Frames.idaStar.idaStar import create_frame as create_idaStar_frame
+from Frames.greedy.greedy import create_frame as create_greedy_frame
 
 # Các hàm tạo frame
 create_frame_function = {
         "bfs": create_bfs_frame,
         "dfs": create_dfs_frame,
         "ids": create_ids_frame,
+        "aStar": create_aStar_frame,
+        "idaStar": create_idaStar_frame,
+        "greedy": create_greedy_frame,
 }
 
 
 # =====================================================
-pygame.init()
-# Kích thước cửa sổ
-WIDTH, HEIGHT = 300, 350
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Minh họa Puzzle 8")
-# Màu sắc
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (200, 200, 200)
-# Font chữ
-font = pygame.font.Font(None, 36)
-# Ma trận 3x3
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-# Kích thước ô vuông
-CELL_SIZE = WIDTH // 3
+# pygame.init()
+# # Kích thước cửa sổ
+# WIDTH, HEIGHT = 300, 350
+# screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# pygame.display.set_caption("Minh họa Puzzle 8")
+# # Màu sắc
+# WHITE = (255, 255, 255)
+# BLACK = (0, 0, 0)
+# GRAY = (200, 200, 200)
+# # Font chữ
+# font = pygame.font.Font(None, 36)
+# # Ma trận 3x3
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+# # Kích thước ô vuông
+# CELL_SIZE = WIDTH // 3
 # =====================================================
 
 
@@ -50,13 +56,20 @@ class App():
             "dfs": create_dfs_frame(self.go_to, self.window, self.update_solver_path),
             "ids": create_ids_frame(self.go_to, self.window, self.update_solver_path),
             "bfs": create_bfs_frame(self.go_to, self.window, self.update_solver_path),
+            "aStar": create_aStar_frame(self.go_to, self.window, self.update_solver_path),
+            "idaStar": create_idaStar_frame(self.go_to, self.window, self.update_solver_path),
+            "greedy": create_greedy_frame(self.go_to, self.window, self.update_solver_path),
         }
-        # 
+        # # Pack xong unpack để hiệu ứng chuyển trang mượt hơn
+        # for k in self.frames.keys():
+        #     go_to
+
+        # Pack lại trang đầu
         self.currentFrame = "bfs"
         self.frames[self.currentFrame].pack(fill="both", expand=True)
 
-        # Loop
-        self.window.after(100, self.update_pygame)
+        # # Loop
+        # self.window.after(100, self.update_pygame)
 
         # 
         self.solver_path = [[[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]], [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]]

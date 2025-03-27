@@ -14,8 +14,10 @@ from tkinter.scrolledtext import ScrolledText
 import os
 import random
 import time
-import solve_puz8_module as solver
-import threading
+import numpy
+from algorithm.DFS import dfs_and_generation_data, DFS
+from openBrower import open_view
+from tree_generation.tree_generation import generation
 
 current_file_path = os.path.abspath(__file__)  # Đường dẫn đầy đủ của file hiện tại
 current_dir = os.path.dirname(current_file_path)  # Thư mục chứa file hiện tại
@@ -113,7 +115,7 @@ def create_frame(go_to, window, update_solver_path):
         image=frame.button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: print("view"),
         relief="flat"
     )
     frame.button_2.place(
@@ -164,7 +166,7 @@ def create_frame(go_to, window, update_solver_path):
         image=frame.button_image_4,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: dfs(),
+        command=lambda: dfs_solve_only(),
         relief="flat"
     )
     frame.button_4.place(
@@ -181,7 +183,8 @@ def create_frame(go_to, window, update_solver_path):
         image=frame.button_image_5,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: update_solver_path(frame.path),
+        # command=lambda: update_solver_path(frame.path),
+        command=lambda: view(),
         relief="flat"
     )
     frame.button_5.place(
@@ -319,6 +322,54 @@ def create_frame(go_to, window, update_solver_path):
         font=("Inter", 12 * -1)
     )
 
+    frame.button_image_7 = PhotoImage(
+        file=relative_to_assets("button_7.png"))
+    frame.button_7 = Button(
+        image=frame.button_image_7,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("aStar"),
+        relief="flat"
+    )
+    frame.button_7.place(
+        x=7.0,
+        y=186.0,
+        width=78.0,
+        height=33.0
+    )
+
+    frame.button_image_8 = PhotoImage(
+        file=relative_to_assets("button_8.png"))
+    frame.button_8 = Button(
+        image=frame.button_image_8,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("greedy"),
+        relief="flat"
+    )
+    frame.button_8.place(
+        x=8.0,
+        y=229.0,
+        width=78.0,
+        height=33.0
+    )
+
+    frame.button_image_9 = PhotoImage(
+        file=relative_to_assets("button_9.png"))
+    frame.button_9 = Button(
+        image=frame.button_image_9,
+        borderwidth=0,
+        highlightthickness=0,
+        command=lambda: go_to("idaStar") ,
+        relief="flat"
+    )
+    frame.button_9.place(
+        x=8.0,
+        y=272.0,
+        width=78.0,
+        height=33.0
+    )
+
 
     # Xử lý khi nhấn nút giải
     frame.text_1 = ScrolledText(
@@ -336,7 +387,7 @@ def create_frame(go_to, window, update_solver_path):
     )
 
 
-    def dfs():
+    def dfs_solve_only():
         input_board_string = frame.entry_1.get()
         # Check có hợp lệ
         if not (len(input_board_string) == 9 and set(input_board_string) == set("012345678")):
@@ -345,6 +396,7 @@ def create_frame(go_to, window, update_solver_path):
         
         input_board_array = list(map(int, input_board_string))
         i00, i01, i02, i10, i11, i12, i20, i21, i22 = input_board_array 
+        root = numpy.array(((i00, i01, i02), (i10, i11, i12), (i20, i21, i22)))
 
         # 
         frame.text_1.delete("1.0", END)
@@ -356,28 +408,70 @@ def create_frame(go_to, window, update_solver_path):
         frame.entry_4.delete(0, END)
 
         start_time = time.perf_counter()
-        solver_result = solver.solve_with_dfs(i00, i01, i02, i10, i11, i12, i20, i21, i22)
+        path, info = DFS(root)
         end_time = time.perf_counter()
         elapsed_time = end_time - start_time # Thời gian tính toán
-        solver_result = solver_result[::-1]
 
-        frame.path = solver_result
+        if path:
+            # Thêm các thông tin 
+            frame.entry_2.insert(0, str(info["visited"]))
+            frame.entry_3.insert(0, str(info["path_len"]))
+            frame.entry_4.insert(0, str(elapsed_time))
 
-        # Thêm các thông tin 
-        info_3x3 = solver_result[0]
-        frame.entry_2.insert(0, str(info_3x3[0][0]))
-        frame.entry_3.insert(0, str(info_3x3[0][1]))
-        frame.entry_4.insert(0, str(elapsed_time))
-
-        # Không thể giải
-        if info_3x3[0][1] == 0:
+            # Ghi thông tin giải lên Text Area
+            i = 0
+            for node in path:
+                frame.text_1.insert("end", str(i) + ". " + str(node) + "\n")
+                i += 1
+        else:
+            # Không thể giải
             frame.text_1.insert("end", "Không có lời giải!" + "\n")
+            frame.entry_4.insert(0, str(elapsed_time))
 
-        # Ghi thông tin giải lên Text Area
-        i = 0
-        for node in solver_result:
-            frame.text_1.insert("end", str(i) + ". " + str(node) + "\n")
-            i += 1
+
+    def view():
+        input_board_string = frame.entry_1.get()
+        # Check có hợp lệ
+        if not (len(input_board_string) == 9 and set(input_board_string) == set("012345678")):
+            print("Bảng không hợp lệ.")
+            return
+        
+        input_board_array = list(map(int, input_board_string))
+        i00, i01, i02, i10, i11, i12, i20, i21, i22 = input_board_array 
+        root = numpy.array(((i00, i01, i02), (i10, i11, i12), (i20, i21, i22)))
+
+        # Xóa các Entry ghi thông tin
+        frame.entry_2.delete(0, END)
+        frame.entry_3.delete(0, END)
+        frame.entry_4.delete(0, END)
+
+        start_time = time.perf_counter()
+        rs = DFS(root)
+        end_time = time.perf_counter()
+        elapsed_time = end_time - start_time # Thời gian tính toán
+
+        # 
+        path, info, dataMap = dfs_and_generation_data(root)
+
+        if not path:
+            # Không thể giải
+            frame.text_1.insert("end", "Không có lời giải!" + "\n")
+            frame.entry_4.insert(0, str(elapsed_time))
+        else:
+            # Thêm các thông tin 
+            frame.entry_2.insert(0, str(info["visited"]))
+            frame.entry_3.insert(0, str(info["path_len"]))
+            frame.entry_4.insert(0, str(elapsed_time))
+
+            # Ghi thông tin giải lên Text Area
+            i = 0
+            for node in path:
+                frame.text_1.insert("end", str(i) + ". " + str(node) + "\n")
+                i += 1
+
+        # Tạo map và mở lên 
+        generation()
+        open_view()
 
 
     def get_random_board():
