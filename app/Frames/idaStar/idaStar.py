@@ -105,7 +105,7 @@ def create_frame(go_to, window, update_solver_path):
         image=frame.button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: print("button_2 clicked : Tính năng chưa phất triển xong"),
         relief="flat"
     )
     frame.button_2.place(

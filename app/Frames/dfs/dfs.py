@@ -469,9 +469,10 @@ def create_frame(go_to, window, update_solver_path):
                 frame.text_1.insert("end", str(i) + ". " + str(node) + "\n")
                 i += 1
 
-        # Tạo map và mở lên 
-        generation()
-        open_view()
+        # Tạo map
+        t = generation()
+        if t:
+            open_view()
 
 
     def get_random_board():

@@ -1,7 +1,7 @@
 
 from tkinter import Tk
 import tkinter as tk
-import pygame
+# import pygame
 
 from Frames.bfs.bfs import create_frame as create_bfs_frame
 from Frames.dfs.dfs import create_frame as create_dfs_frame
@@ -60,9 +60,6 @@ class App():
             "idaStar": create_idaStar_frame(self.go_to, self.window, self.update_solver_path),
             "greedy": create_greedy_frame(self.go_to, self.window, self.update_solver_path),
         }
-        # # Pack xong unpack để hiệu ứng chuyển trang mượt hơn
-        # for k in self.frames.keys():
-        #     go_to
 
         # Pack lại trang đầu
         self.currentFrame = "bfs"

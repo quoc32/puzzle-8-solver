@@ -118,9 +118,9 @@ def BFS_pygame(root):
 
 def bfs_and_generation_data(root):
     path, info, dataMap = BFS_pygame(root)
-    # print("info: ", info)
-    # print("path: ", path)
-    # print("dataMap: ", dataMap)
+    print("info: ", info)
+    print("path: ", path)
+    print("dataMap: ", dataMap)
 
     with open("./data.txt", "w", encoding="utf-8") as file:
         for key, value in info.items():

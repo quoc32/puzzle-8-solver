@@ -124,9 +124,9 @@ def DFS_2(root):
 # ===========================
 def dfs_and_generation_data(root):
     path, info, dataMap = DFS_2(root)
-    # print("info: ", info)
-    # print("path: ", path)
-    # print("dataMap: ", dataMap)
+    print("info: ", info)
+    print("path: ", path)
+    print("dataMap: ", dataMap)
 
     with open("./data.txt", "w", encoding="utf-8") as file:
         for key, value in info.items():

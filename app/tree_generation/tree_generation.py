@@ -57,3 +57,6 @@ def generation():
 
     else:
         print("The map too BIG!!! node count: ", info_dict["generated"], "; max: 50_000")
+        return False
+
+    return True
