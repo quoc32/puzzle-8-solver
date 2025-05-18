@@ -20,20 +20,29 @@ o	Đưa vào queue
 o	Đánh dấu đã thăm
 o	Duyệt từng đỉnh kề và lặp lại quy trình
 
+![image](https://github.com/user-attachments/assets/e39968a8-ad5d-44e5-9a3e-73dc7f3a8d8d)
 
- 
+
 -	Giao diện: 
 + Nút Random để tạo 1 bảng ngẫu nhiên.
 + Nút Solve để giải.
 + Nút View để xem sơ đồ cây của giải thuật.
  
 -	Ta có thể thấy biểu đồ cây của giải thuật bfs mở rộng theo chiều ngang rất nhiều.
+
+![image](https://github.com/user-attachments/assets/815203c6-74fa-4237-ba90-efca8c33e374)
+
  
 -	Node thúc và khởi đầu có màu xanh lá.
- 
+
+![image](https://github.com/user-attachments/assets/8ab0f4c0-840c-4601-9a37-82dba15d2b59)
+
 # 2. Giải với thuật toán DFS
 - DFS là thuật toán duyệt cây hoặc đồ thị bằng cách đi sâu nhất có thể theo một nhánh, sau đó mới quay lại để duyệt các nhánh khác.
 Khác với BFS (chiều rộng), DFS ưu tiên chiều sâu.
+
+![image](https://github.com/user-attachments/assets/0467ea60-afc8-4af1-beba-37f14d69f3fb)
+
 - Ý tưởng chính của DFS:
 + Bắt đầu từ đỉnh xuất phát.
 + Đánh dấu đỉnh là đã thăm.
@@ -41,37 +50,53 @@ Khác với BFS (chiều rộng), DFS ưu tiên chiều sâu.
 + Khi không còn đỉnh nào đi được → quay lui.
 
  
-
 -	Giao diện: 
 + Nút Random để tạo 1 bảng ngẫu nhiên.
 + Nút Solve để giải.
 + Nút View để xem sơ đồ cây của giải thuật.
 
- 
+![image](https://github.com/user-attachments/assets/0a349538-301e-49cd-8e01-2ace622c141d)
+
 (Hình ảnh các node ban đầu)
- 
+
+ ![image](https://github.com/user-attachments/assets/86f3d85f-617f-426d-83de-ef14c20ef6b5)
+
 (Hình ảnh tổng thể của cây)
- 
+
+ ![image](https://github.com/user-attachments/assets/d1756230-a8fd-42de-8333-54344d6a402c)
+
 -	Nhận xét: Biểu đồ cây của giải thuật DSF được mở rộng theo chiều sâu rất nhiều.
- 
+
+ ![image](https://github.com/user-attachments/assets/def364e7-0fda-45bc-9698-a12f5594b894)
+
 (Hình ảnh các node cuối của cây)
 
 # 3. Giải với thuật toán IDS
- 
+
+ ![image](https://github.com/user-attachments/assets/1cff5517-54d5-4ef4-90ca-46009527841d)
+
 -	IDS: Hàm giải thuật toán này được code với ngôn ngữ c++ nên nó chạy rất nhanh và nhẹ, tuy nhiên nó không generation ra biểu đồ cây.
- 
+
+ ![image](https://github.com/user-attachments/assets/695f148d-5f55-4225-9bd1-b17e7e76b466)
+
 # 4. Giải với thuật toán A*
 - A* là một thuật toán tìm đường đi ngắn nhất trên đồ thị, kết hợp giữa:
 •	Tính chính xác của Dijkstra (tìm đường tối ưu).
 •	Tính hiệu quả của Greedy Best-First Search (tìm nhanh hướng về đích).
 - Nó là informed search algorithm – sử dụng hàm heuristic để dự đoán chi phí còn lại đến đích.
 
- 
- 
+ ![image](https://github.com/user-attachments/assets/4d1614a8-e02b-42ce-b85e-e73510498ff9)
+
+![image](https://github.com/user-attachments/assets/3aa97424-c44b-4c56-a338-5ace13f1c4aa)
+
 -	Đây là hình dạng tổng thể cây của giải thuật.
- 
- 
- 
+
+ ![image](https://github.com/user-attachments/assets/e0b872e8-a018-4b65-abe8-fa0b15aea8d1)
+
+![image](https://github.com/user-attachments/assets/1e024457-2022-45bd-bda9-584f0574246c)
+
+![image](https://github.com/user-attachments/assets/395bdb76-e3e9-4790-b44d-a98fdcc049ad)
+
 - Nhận xét: nhìn chung cây cũng được mở rộng theo chiều ngang rất nhiều khi so sánh với giải thuật tham lam (greedy), nhưng có phần cân đối hơn so với bfs.
 # 5. Giải với thuật toán tham lam (Greedy)
 - Thuật toán tham lam là một kỹ thuật giải bài toán bằng cách:
@@ -80,15 +105,17 @@ Tức là:
 •	Không xét lại các lựa chọn trước đó.
 •	Không quay lui như backtracking, không thử mọi khả năng như Brute Force.
 
- 
- 
- 
-- Nhận xét: hình dạng cây của giải thuật khá cân bằng, vừa được mở rộng theo chiều ngang và chiều sâu 1 cách cân đối, xét về phương diện thời gian, tôi đánh giá đây là giait thuật tốt nhất để giải, tuy nhiên, nếu bạn cần lời giải tối ưu nhất, thì bfs là lựa chọn tốt nhất.
- 
+ ![image](https://github.com/user-attachments/assets/bfe0a44e-a1c0-4621-8529-5b471cd642f8)
 
- 
- 
-# 6. Giải với thuật toán IDA*
+ ![image](https://github.com/user-attachments/assets/3bcd5f5b-80df-4874-8afd-9de8c662865c)
+
+ ![image](https://github.com/user-attachments/assets/6196d603-6fcb-41dd-9444-5097634f5f9e)
+
+- Nhận xét: hình dạng cây của giải thuật khá cân bằng, vừa được mở rộng theo chiều ngang và chiều sâu 1 cách cân đối, xét về phương diện thời gian, tôi đánh giá đây là giait thuật tốt nhất để giải, tuy nhiên, nếu bạn cần lời giải tối ưu nhất, thì bfs là lựa chọn tốt nhất.
+
+ ![image](https://github.com/user-attachments/assets/ad16bcd7-dda7-4b4b-b20b-42a185cab892)
+
+ ![image](https://github.com/user-attachments/assets/7e711387-bd57-4e3a-9a43-2a95c5833182)
 
 # 7. Giải với thuật toán tìm kiếm thế hệ (Generation Search)
 - Thuật toán Tìm kiếm theo thế hệ là một kỹ thuật tối ưu hóa mô phỏng quá trình tiến hóa tự nhiên của sinh vật. Nó dựa trên di truyền học, đột biến, lai ghép và chọn lọc tự nhiên. 
@@ -103,15 +130,24 @@ o	Áp dụng đột biến (mutation) để tạo sự đa dạng.
 o	Hình thành quần thể mới.
 + Lặp lại cho đến khi tìm được lời giải tốt hoặc đạt số thế hệ tối đa.
 
+![image](https://github.com/user-attachments/assets/64d16ffb-997e-4365-9dab-f466b0ea85b5)
  
 - Menu chức năng: gồm 2 phần, chạy giải thuật và xem map.
- 
+
+ ![image](https://github.com/user-attachments/assets/db377999-1920-4728-a27f-74bd55b7ea2d)
+
 - Sau khi chạy giải thuật, thông tin của các thế hệ được sinh ra để được lưu trong thư mục data.
- 
+
+ ![image](https://github.com/user-attachments/assets/b74774fb-48d7-4fb5-9c6e-e9e7341fa6f8)
+
 - Đây là ví dụ thông tin của 1 thế hệ, bao gồm giá trị của cá thể và giá trị fitness của có thể đó.
- 
+
+ ![image](https://github.com/user-attachments/assets/8b2c8f59-30e1-420f-bb2e-4e4660ecb7d7)
+
 - Đây là view map để xem thông tin và hình ảnh trực quan của mỗi thế hệ, thế hệ ban đầu (gen 0) là được random ngẫu nhiên.
- 
+
+ ![image](https://github.com/user-attachments/assets/91828a99-ad24-439d-9a2c-03bb3661456f)
+
 - Các thế hệ sau được sinh sản và chọn lọc nên dần dần có giá trị fitness trung bình cho quần thể ngày 1 cải thiện.
  
  
