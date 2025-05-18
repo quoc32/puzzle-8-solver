@@ -1,4 +1,4 @@
-Họ Tên Sinh Viên: Vũ Anh Quốc
+![image](https://github.com/user-attachments/assets/d194058b-557f-4450-89da-4f728c8f62ee)Họ Tên Sinh Viên: Vũ Anh Quốc
 
 Mã số sinh viên: 23110296
 
@@ -151,6 +151,7 @@ o	Hình thành quần thể mới.
 - Các thế hệ sau được sinh sản và chọn lọc nên dần dần có giá trị fitness trung bình cho quần thể ngày 1 cải thiện.
  
  
+ Video demo:
  
  
  
@@ -166,29 +167,32 @@ o	Hình thành quần thể mới.
 5.	Lặp lại từ bước 2.
 6.	Nếu không còn trạng thái láng giềng nào tốt hơn → dừng, trả về trạng thái hiện tại.
 
+![image](https://github.com/user-attachments/assets/f31af2ae-c010-4ec5-b36a-5ba2d7036033)
 
- 
 - Menu chọn các chức năng.
  
+![image](https://github.com/user-attachments/assets/ce93a2e5-de31-434c-966a-932485e769be)
 
 # 9. Giải với thuật toán leo đồi ngẫu nhiên (Random Hill Climbing)
 - Đây là một biến thể của Hill Climbing truyền thống, nhằm khắc phục nhược điểm dễ bị kẹt ở cực trị địa phương bằng cách:
 - Chọn ngẫu nhiên một trạng thái láng giềng thay vì luôn chọn láng giềng tốt nhất.
 
- 
+ ![image](https://github.com/user-attachments/assets/e2073353-63f7-47bb-bdec-192fda227e45)
+
 # 10. Giải với thuật toán leo đồi dốc nhất (Steepest Ascent Hill Climbing)
 - Đây là một biến thể của thuật toán Hill Climbing, trong đó:
 - Tại mỗi bước, thuật toán sẽ tìm và chọn trạng thái láng giềng tốt nhất (có giá trị hàm mục tiêu cao nhất) trong tất cả các láng giềng, rồi di chuyển đến trạng thái đó.
 - Khác với Hill Climbing đơn giản (chọn láng giềng tốt hơn đầu tiên gặp), thuật toán này duyệt hết tất cả láng giềng rồi mới chọn láng giềng tốt nhất.
 
- 
+ ![image](https://github.com/user-attachments/assets/a6eda7f5-9be2-4e1c-8e8d-cd10f3ad7f8a)
+
 # 11. Giải với thuật toán Beam Search
 - Beam Search là một thuật toán tìm kiếm heuristic, kết hợp giữa tìm kiếm theo chiều rộng (BFS) và lọc bớt các trạng thái không tốt dựa trên một tham số gọi là beam width (bề rộng chùm tia).
 + Thay vì giữ tất cả các nút con như BFS, Beam Search chỉ giữ lại một số lượng giới hạn các nút tốt nhất (theo đánh giá heuristic) ở mỗi bước.
 + Mục đích: Giảm bớt bộ nhớ và độ phức tạp tính toán so với BFS, đồng thời vẫn giữ đa dạng các lựa chọn tốt.
 
- 
- 
+ ![image](https://github.com/user-attachments/assets/6e642a9c-a4bf-41b3-88db-eb6aeb6fd40d)
+
 # 12. Giải với thuật toán tôi thép (Simulated Annealing)
 - Simulated Annealing là một thuật toán tối ưu hóa heuristic (gần đúng) mô phỏng quá trình ủ nhiệt trong luyện kim – nơi kim loại được nung nóng và làm nguội dần để đạt được cấu trúc ổn định có năng lượng thấp nhất.
 - Mục tiêu của SA: Tìm được nghiệm tối ưu gần nhất (gần toàn cục) cho các bài toán tối ưu hóa phức tạp, có không gian tìm kiếm rất lớn, dễ bị kẹt ở cực trị địa phương (local minimum).
@@ -199,7 +203,10 @@ o	Hình thành quần thể mới.
 •	Nếu nghiệm mới xấu hơn → vẫn có xác suất chấp nhận, phụ thuộc vào nhiệt độ T.
 •	Nhiệt độ giảm dần theo thời gian (như làm nguội kim loại).
 
- 
+![image](https://github.com/user-attachments/assets/9ef259ea-26cf-44a4-9faf-52ea4acb8ce9)
+
+ ![image](https://github.com/user-attachments/assets/3eaef43f-2232-445d-ab3e-abc251463bcd)
+
 - Hình trên thể hiện việc thuật toán đã duyệt qua các node có giá trị heurictic không tốt hơn trong thời gian ban đầu và khi nhiệt độ ngày càng giảm, nó dừng lại và không tìm ra kết quả.
  
 - Node trên cùn là trạng thái ban đầu.
@@ -211,7 +218,9 @@ o	Hình thành quần thể mới.
 +  Thử một cách chọn (bước đi).
 + Kiểm tra nếu cách chọn đó hợp lệ: Nếu đúng - tiếp tục thử bước tiếp theo. Nếu sai: quay lui và thử cách chọn khác.
 + Lặp lại quá trình trên cho đến khi: Tìm được lời giải (hoặc tất cả lời giải). Hoặc không còn khả năng nào hợp lệ.
- 
+
+![image](https://github.com/user-attachments/assets/05d88d0d-ce8f-4855-964b-0238e627cf14)
+
 - Đây là kết quả của bài toán 8 ô chữ khi giải bằng thuật toán Backtracking với ràng buộc “các giá trị của ô chữ phải liên tục tăng”.
 # 14. Lọc Domain giá trị với thuật toán AC-3
 - Thuật toán AC-3 (Arc Consistency Algorithm 3) là một thuật toán lọc ràng buộc (constraint propagation) được sử dụng trong CSP (Constraint Satisfaction Problems – bài toán thỏa mãn ràng buộc), ví dụ như Sudoku, lập thời khóa biểu, bản đồ tô màu...
@@ -230,11 +239,15 @@ o	Nếu phát hiện một giá trị trong Di không còn giá trị phù hợp
 o	Nếu có sự thay đổi, ta thêm lại tất cả cung (Xk, Xi) (với Xk ≠ Xj) vào hàng đợi để kiểm tra tiếp.
 •	Kết thúc khi hàng đợi rỗng, nghĩa là không còn gì cần cập nhật.
 
- 
+ ![image](https://github.com/user-attachments/assets/86fcc880-c956-4048-b7f0-f8271dc0885d)
+
 -  Thuật toán AC-3 để lọc Domains giá trị của chương trình trong bài toán 8 ô chữ ở đây bao gồm các ràng buộc: Các ô có giá trị bằng nhau, các ô có giá trị tăng dần, các giá trị chẵn lẻ xen kẽ, có giá trị xen kẽ và phải khác nhau, các ô đối xứng thì cùng chẵn hoặc lẽ.
 
- 
+ ![image](https://github.com/user-attachments/assets/3166e539-3761-4a23-aa99-00265421907f)
+
 -  Ta có thể chỉnh giá trị cho Domain giá trị ban của của một biến.
- 
+
+ ![Uploading image.png…]()
+
 -  Trên đây là demo việc lọc domains với điều kiện “Các ô chẵn lẽ xen kẽ và khác nhau”, ta thấy khi ta thiết lập giá trị ban đầu cho biến 5 có domain giá trị là 8 (số chẵn) thì khi lọc domain giá trị của các ô kề ô 5 (ô 2, 4, 8) sẽ bị loại bỏ giá trị chẵn, tương tự với các ô kề các ô này.
  
