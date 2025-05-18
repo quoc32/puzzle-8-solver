@@ -11,10 +11,15 @@ Chủ đề: Giải bài toán 8 ô chữ với các thuật toán AI cơ bản
  
 # 1.	Giải với thuật toán BFS
 - BFS là một thuật toán duyệt đồ thị hoặc cây theo từng lớp (layer), tức là:
+
 •	Duyệt tất cả đỉnh kề với đỉnh hiện tại trước.
+
 •	Sau đó mới duyệt đến các đỉnh xa hơn 1 bước.
+
 - Ý tưởng chính của BFS:
+
 •	Sử dụng một hàng đợi (queue) để duyệt các đỉnh theo thứ tự chiều rộng.
+
 •	Bắt đầu từ đỉnh xuất phát:
 o	Đưa vào queue
 o	Đánh dấu đã thăm
