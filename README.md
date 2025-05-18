@@ -1,29 +1,13 @@
 Họ Tên Sinh Viên: Vũ Anh Quốc
 Mã số sinh viên: 23110296
 
-BÁO CÁO CÁ NHÂN
-Môn học: TRÍ TUỆ NHÂN TẠO
-Chủ đề: Giải bài toán 8 ô chữ với các thuật toán AI cơ bản
+# BÁO CÁO CÁ NHÂN
+## Môn học: TRÍ TUỆ NHÂN TẠO
+## Chủ đề: Giải bài toán 8 ô chữ với các thuật toán AI cơ bản
 
-Mục Lục
-1.	Giải với thuật toán BFS	2
-2. Giải với thuật toán DFS	4
-3. Giải với thuật toán IDS	9
-4. Giải với thuật toán A*	10
-5. Giải với thuật toán tham lam (Greedy)	13
-6. Giải với thuật toán IDA*	16
-7. Giải với thuật toán tìm kiếm thế hệ (Generation Search)	16
-8. Giải với thuật toán leo đồi đơn giản (Simple Hill Climbing)	23
-9. Giải với thuật toán leo đồi ngẫu nhiên (Random Hill Climbing)	25
-10. Giải với thuật toán leo đồi dốc nhất (Steepest Ascent Hill Climbing)	26
-11. Giải với thuật toán Beam Search	27
-12. Giải với thuật toán tôi thép (Simulated Annealing)	29
-13. Giải với thuật toán Backtracking	32
-14. Lọc Domain giá trị với thuật toán AC-3	33
 
  
-
-1.	Giải với thuật toán BFS
+# 1.	Giải với thuật toán BFS
 - BFS là một thuật toán duyệt đồ thị hoặc cây theo từng lớp (layer), tức là:
 •	Duyệt tất cả đỉnh kề với đỉnh hiện tại trước.
 •	Sau đó mới duyệt đến các đỉnh xa hơn 1 bước.
@@ -45,7 +29,7 @@ o	Duyệt từng đỉnh kề và lặp lại quy trình
  
 -	Node thúc và khởi đầu có màu xanh lá.
  
-2. Giải với thuật toán DFS
+# 2. Giải với thuật toán DFS
 - DFS là thuật toán duyệt cây hoặc đồ thị bằng cách đi sâu nhất có thể theo một nhánh, sau đó mới quay lại để duyệt các nhánh khác.
 Khác với BFS (chiều rộng), DFS ưu tiên chiều sâu.
 - Ý tưởng chính của DFS:
@@ -70,11 +54,11 @@ Khác với BFS (chiều rộng), DFS ưu tiên chiều sâu.
  
 (Hình ảnh các node cuối của cây)
 
-3. Giải với thuật toán IDS
+# 3. Giải với thuật toán IDS
  
 -	IDS: Hàm giải thuật toán này được code với ngôn ngữ c++ nên nó chạy rất nhanh và nhẹ, tuy nhiên nó không generation ra biểu đồ cây.
  
-4. Giải với thuật toán A*
+# 4. Giải với thuật toán A*
 - A* là một thuật toán tìm đường đi ngắn nhất trên đồ thị, kết hợp giữa:
 •	Tính chính xác của Dijkstra (tìm đường tối ưu).
 •	Tính hiệu quả của Greedy Best-First Search (tìm nhanh hướng về đích).
@@ -87,7 +71,7 @@ Khác với BFS (chiều rộng), DFS ưu tiên chiều sâu.
  
  
 - Nhận xét: nhìn chung cây cũng được mở rộng theo chiều ngang rất nhiều khi so sánh với giải thuật tham lam (greedy), nhưng có phần cân đối hơn so với bfs.
-5. Giải với thuật toán tham lam (Greedy)
+# 5. Giải với thuật toán tham lam (Greedy)
 - Thuật toán tham lam là một kỹ thuật giải bài toán bằng cách:
 Luôn chọn phương án tốt nhất tại mỗi bước với hy vọng rằng toàn bộ lời giải sẽ tối ưu toàn cục.
 Tức là:
@@ -102,9 +86,9 @@ Tức là:
 
  
  
-6. Giải với thuật toán IDA*
+# 6. Giải với thuật toán IDA*
 
-7. Giải với thuật toán tìm kiếm thế hệ (Generation Search)
+# 7. Giải với thuật toán tìm kiếm thế hệ (Generation Search)
 - Thuật toán Tìm kiếm theo thế hệ là một kỹ thuật tối ưu hóa mô phỏng quá trình tiến hóa tự nhiên của sinh vật. Nó dựa trên di truyền học, đột biến, lai ghép và chọn lọc tự nhiên. 
 - GA là một dạng của thuật toán tiến hóa (evolutionary algorithm) và rất hiệu quả trong các bài toán tìm kiếm không gian lớn, phức tạp.
 - Ý tưởng chính:
@@ -133,7 +117,7 @@ o	Hình thành quần thể mới.
  
  
 - Quá trình chọn lọc và sinh sản được diễn ra cho đến khi cá thể có fitness 0 được tìm thấy.
-8. Giải với thuật toán leo đồi đơn giản (Simple Hill Climbing)
+# 8. Giải với thuật toán leo đồi đơn giản (Simple Hill Climbing)
 - Hill Climbing (leo đồi) là một thuật toán tìm kiếm địa phương (local search), thường dùng để tìm cực trị (cực đại hoặc cực tiểu) của một hàm mục tiêu bằng cách:
 - Luôn di chuyển đến trạng thái láng giềng tốt hơn, lặp lại cho đến khi không còn trạng thái nào tốt hơn.
 - Ý tưởng chính:
@@ -149,25 +133,25 @@ o	Hình thành quần thể mới.
 - Menu chọn các chức năng.
  
 
-9. Giải với thuật toán leo đồi ngẫu nhiên (Random Hill Climbing)
+# 9. Giải với thuật toán leo đồi ngẫu nhiên (Random Hill Climbing)
 - Đây là một biến thể của Hill Climbing truyền thống, nhằm khắc phục nhược điểm dễ bị kẹt ở cực trị địa phương bằng cách:
 - Chọn ngẫu nhiên một trạng thái láng giềng thay vì luôn chọn láng giềng tốt nhất.
 
  
-10. Giải với thuật toán leo đồi dốc nhất (Steepest Ascent Hill Climbing)
+# 10. Giải với thuật toán leo đồi dốc nhất (Steepest Ascent Hill Climbing)
 - Đây là một biến thể của thuật toán Hill Climbing, trong đó:
 - Tại mỗi bước, thuật toán sẽ tìm và chọn trạng thái láng giềng tốt nhất (có giá trị hàm mục tiêu cao nhất) trong tất cả các láng giềng, rồi di chuyển đến trạng thái đó.
 - Khác với Hill Climbing đơn giản (chọn láng giềng tốt hơn đầu tiên gặp), thuật toán này duyệt hết tất cả láng giềng rồi mới chọn láng giềng tốt nhất.
 
  
-11. Giải với thuật toán Beam Search
+# 11. Giải với thuật toán Beam Search
 - Beam Search là một thuật toán tìm kiếm heuristic, kết hợp giữa tìm kiếm theo chiều rộng (BFS) và lọc bớt các trạng thái không tốt dựa trên một tham số gọi là beam width (bề rộng chùm tia).
 + Thay vì giữ tất cả các nút con như BFS, Beam Search chỉ giữ lại một số lượng giới hạn các nút tốt nhất (theo đánh giá heuristic) ở mỗi bước.
 + Mục đích: Giảm bớt bộ nhớ và độ phức tạp tính toán so với BFS, đồng thời vẫn giữ đa dạng các lựa chọn tốt.
 
  
  
-12. Giải với thuật toán tôi thép (Simulated Annealing)
+# 12. Giải với thuật toán tôi thép (Simulated Annealing)
 - Simulated Annealing là một thuật toán tối ưu hóa heuristic (gần đúng) mô phỏng quá trình ủ nhiệt trong luyện kim – nơi kim loại được nung nóng và làm nguội dần để đạt được cấu trúc ổn định có năng lượng thấp nhất.
 - Mục tiêu của SA: Tìm được nghiệm tối ưu gần nhất (gần toàn cục) cho các bài toán tối ưu hóa phức tạp, có không gian tìm kiếm rất lớn, dễ bị kẹt ở cực trị địa phương (local minimum).
 - Ý tưởng chính:
@@ -183,7 +167,7 @@ o	Hình thành quần thể mới.
 - Node trên cùn là trạng thái ban đầu.
  
 - Không thể tìm đến đích do bị kẹt cục bộ.
-13. Giải với thuật toán Backtracking
+# 13. Giải với thuật toán Backtracking
 - Thuật toán Backtracking (quay lui) là một phương pháp tìm kiếm tổng quát để giải quyết các bài toán bằng cách thử từng khả năng, quay lại (backtrack) khi thấy một hướng đi không dẫn đến kết quả đúng.
 - Ý tưởng chính của Backtracking:
 +  Thử một cách chọn (bước đi).
@@ -191,7 +175,7 @@ o	Hình thành quần thể mới.
 + Lặp lại quá trình trên cho đến khi: Tìm được lời giải (hoặc tất cả lời giải). Hoặc không còn khả năng nào hợp lệ.
  
 - Đây là kết quả của bài toán 8 ô chữ khi giải bằng thuật toán Backtracking với ràng buộc “các giá trị của ô chữ phải liên tục tăng”.
-14. Lọc Domain giá trị với thuật toán AC-3
+# 14. Lọc Domain giá trị với thuật toán AC-3
 - Thuật toán AC-3 (Arc Consistency Algorithm 3) là một thuật toán lọc ràng buộc (constraint propagation) được sử dụng trong CSP (Constraint Satisfaction Problems – bài toán thỏa mãn ràng buộc), ví dụ như Sudoku, lập thời khóa biểu, bản đồ tô màu...
 - Mục tiêu của AC-3: Đảm bảo rằng tất cả các cung (arc) trong bài toán là consistency — tức là với mỗi giá trị có thể của một biến, tồn tại ít nhất một giá trị phù hợp ở biến liên quan.
 - Thuật ngữ cần biết:
@@ -216,4 +200,3 @@ o	Nếu có sự thay đổi, ta thêm lại tất cả cung (Xk, Xi) (với Xk 
  
 -  Trên đây là demo việc lọc domains với điều kiện “Các ô chẵn lẽ xen kẽ và khác nhau”, ta thấy khi ta thiết lập giá trị ban đầu cho biến 5 có domain giá trị là 8 (số chẵn) thì khi lọc domain giá trị của các ô kề ô 5 (ô 2, 4, 8) sẽ bị loại bỏ giá trị chẵn, tương tự với các ô kề các ô này.
  
-LINK GITHUB: quoc32/puzzle-8-solver: Giải puzzle-8 với các thuật toán cơ bản (https://github.com/quoc32/puzzle-8-solver)
