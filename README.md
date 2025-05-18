@@ -4,6 +4,7 @@ Mã số sinh viên: 23110296
 
 # BÁO CÁO CÁ NHÂN
 Môn học: TRÍ TUỆ NHÂN TẠO
+
 Chủ đề: Giải bài toán 8 ô chữ với các thuật toán AI cơ bản
 
 
