@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d194058b-557f-4450-89da-4f728c8f62ee)Họ Tên Sinh Viên: Vũ Anh Quốc
+Họ Tên Sinh Viên: Vũ Anh Quốc
 
 Mã số sinh viên: 23110296
 
